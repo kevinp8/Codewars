@@ -6,6 +6,4 @@ function whatNumberIsIt(n){
   else if (n === Number.NEGATIVE_INFINITY) return "Input number is Number.NEGATIVE_INFINITY"
   else if (!n) return "Input number is Number.NaN"
   else return `Input number is ${n}`
- 
-  
 }
