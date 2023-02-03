@@ -25,3 +25,9 @@ where continent in ('South America', 'Oceania')
 select name, population
 from world
 where population between (select population+1 from world where name='United Kingdom') and (select population-1 from world where name='Germany') 
+
+--Show the name and the population of each country in Europe. Show the population as a percentage of the population of Germany.
+SELECT name, CONCAT(CAST(ROUND(100*population/(SELECT population FROM world
+WHERE name = 'Germany'),0) AS INT), '%')percetage
+FROM world
+WHERE continent = 'Europe'
