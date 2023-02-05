@@ -31,3 +31,8 @@ SELECT name, CONCAT(CAST(ROUND(100*population/(SELECT population FROM world
 WHERE name = 'Germany'),0) AS INT), '%')percetage
 FROM world
 WHERE continent = 'Europe'
+
+--Which countries have a GDP greater than every country in Europe? [Give the name only.] (Some countries may have NULL gdp values) 
+select name
+from world
+where gdp>(select max(gdp) from world where continent='Europe')
