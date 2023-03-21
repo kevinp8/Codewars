@@ -7,3 +7,7 @@ var capitals = function (word) {
    }
     return arr
   };
+  
+ function capital(capitals){
+  return capitals.map(i => `The capital of ${i.state || i.country} is ${i.capital}`)
+}
